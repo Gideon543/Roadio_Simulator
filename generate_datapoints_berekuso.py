@@ -3,11 +3,12 @@ import requests
 import random
 
 FILENAME = "berekuso_road_datapoints.txt"
+LOCALHOST_IP = '10.10.25.70'
 
 
 def post_data_to_api(z_mean, z_variance, z_deviation, z_peak, z_low, latitude, longitude):
     # define the API endpoint
-    url = 'http://10.10.25.35/RoadioApp_Server_Code/APIs/InsertRoadData_API.php?apicall=addRoadData'
+    url = 'http://'+LOCALHOST_IP+'/RoadioApp_Server_Code/APIs/InsertRoadData_API.php?apicall=addRoadData'
     # define the data to be sent
     data = {
         'Z_Mean': z_mean,
